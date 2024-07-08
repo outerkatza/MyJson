@@ -1,0 +1,31 @@
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+</head>
+<body>
+<h2>JSON </h2>
+<p>First: <span id="name1"></span></p> 
+<p>First Text: <span id="label1"></span></p> 
+<p>Second: <span id="name2"></span></p> 
+<p>Second Content: <span id="label2"></span></p> 
+<p>Third: <span id="name3"></span></p> 
+<p>Thidr Message: <span id="label3"></span></p> 
+
+<script>
+var sites = [
+	{ "name":"test1" , "text":"This is text" }, 
+	{ "name":"test2" , "content":"This is content" }, 
+	{ "name":"test3" , "message":"This is message" }
+];
+
+document.getElementById("name1").innerHTML=sites[0].name;
+document.getElementById("label1").innerHTML=sites[0].text;
+document.getElementById("name2").innerHTML=sites[1].name;
+document.getElementById("label2").innerHTML=sites[1].content;
+document.getElementById("name3").innerHTML=sites[2].name;
+document.getElementById("label3").innerHTML=sites[2].message;
+</script>
+
+</body>
+</html>
