@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json3</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+
+<script>
+
+var myObj, myObj2, i, x="", y="", a, z="", b, c, d="",e,f="";
+myObj = {
+	"name":"websites",
+	"num":3,
+	"sites":[ "Google", "GIthub", "Amazon" ]
+}
+for(i in myObj.sites){
+x += myObj.sites[i] + "<br>";
+}
+document.getElementById("demo").innerHTML = x;
+	
+for ( j = 0; j < myObj.sites.length; j++){
+	y += myObj.sites[j] + "<br>";
+}
+document.getElementById("demo2").innerHTML = y;
+	
+myObj2 = {
+	"name":"website",
+	"num":3,
+	"sites": [
+		{ "name":"Google", "info":[ "Android", "Google Search", "Google Translate" ] },
+        { "name":"Github", "info":[ "Issue", "PR", "Main" ] },
+        { "name":"Amazon", "info":[ "Purchase", "Refund" ] }
+	]
+}
+	
+for (a in myObj2.sites){
+	z += "<h1>" + myObj2.sites[a].name + "</h1>";
+    for (b in myObj2.sites[a].info) {
+        z += myObj2.sites[a].info[b] + "<br>";
+	}
+}
+	
+document.getElementById("demo3").innerHTML = z;
+	
+myObj.sites[1] = "Pulumi";
+for (c in myObj.sites){
+	d += myObj.sites[c] + "<br>";
+}
+
+document.getElementById("demo4").innerHTML = d;
+
+delete myObj.sites[2];
+for (e in myObj.sites){
+	f += myObj.sites[e] + "<br>";
+}
+
+document.getElementById("demo5").innerHTML= f;
+
+</script>
+
+</body>
+</html>
