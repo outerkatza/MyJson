@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Json2</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+	
+<script>
+
+var myObj, myObj2, myObj3, x, y, z, a, b, c, d="", e, f="";
+myObj = { "name":"Github", "alexa":10000, "site":null };
+x = myObj.name;
+y = myObj["alexa"];
+z = myObj.site;
+document.getElementById("demo").innerHTML = x;
+document.getElementById("demo2").innerHTML = y;
+document.getElementById("demo3").innerHTML = z;
+
+for(a in myObj){
+	document.getElementById("demo4").innerHTML += a + "<br>";
+}
+
+for(b in myObj){
+	document.getElementById("demo5").innerHTML += myObj[b] + "<br>";
+}
+
+myObj2 = {
+	"name":"partice",
+	"number":"100000",
+	"webs":{
+		"web1":"www.google.com",
+		"web2":"www.github.com",
+		"web3":"www.chainstack.com"
+	}
+}
+
+myObj2.webs["web0"] = " www.pulumi.com";
+<!-- pulumi只能在web4加入，web0是undefined无法修改 -->
+myObj2.webs.web1="www.google.com";
+
+
+for(c in myObj2.webs){
+	d += myObj2.webs[c]+ "<br>";
+}
+	
+document.getElementById("demo6").innerHTML = d;
+	
+myObj3 = {
+	"name":"partice",
+	"number":"100000",
+	"webs":{
+		"web1":"www",
+		"web2":"gmail",
+		"web3":"com"
+	}
+}
+	
+delete myObj3.webs["web1"];
+
+for(e in myObj3.webs){
+	f += myObj3.webs[e] + "<br>";
+}
+
+document.getElementById("demo7").innerHTML = f;
+
+</script>
+
+</body>
+</html>
